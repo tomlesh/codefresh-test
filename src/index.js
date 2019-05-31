@@ -6,12 +6,25 @@ const mongooseConnection = require('./db/mongo');
 
 const app = express();
 
-mongooseConnection.once('open', () => {
-  console.log('Connected to DB!');
-  app.listen(8080);
+/**
+ * MONGO STUFF
+ */
+var testSchema = new mongoose.Schema({
+  foo: String
 });
+var TestModel = mongoose.model('testModel', testSchema);
+/** END*/
+
+if (mongooseConnection.once) {
+  mongooseConnection.once('open', () => {
+    console.log('Connected to DB!');
+  });
+}
+
+app.listen(8080);
 
 app.get('/', function(req, res) {
+  console.log('asd')
   res.send({ foo: 'zxc' });
 });
 
@@ -21,17 +34,11 @@ app.get('/writeSmth', function(req, res) {
 });
 
 const writeToDb = () => {
-  var testSchema = new mongoose.Schema({
-    foo: String
-  });
-
-  var TestModel = mongoose.model('testModel', testSchema);
-  var test = new TestModel({ foo: 'bar' });
-
+  var test = new TestModel({ foo: 'asd' });
   test.save((err, obj) => {
     if (err) return console.error(err);
 
     console.log(obj + 'saved!');
   })
-  return test.foo; 
+  return test.foo;
 }

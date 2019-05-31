@@ -2,14 +2,15 @@ version: '3'
 services:
     express_server:
         build: .
-        container_name: "express_server"
+        container_name: express_server
+        image: tomlesh/dockerised-express
         environment:
             - NODE_ENV=devasd
         volumes:
             - .:/app
         ports:
             - 8080:8080
-        command: yarn start-dev
+        command: yarn start-prod
         links:
             - mongo
     mongo:

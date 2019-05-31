@@ -11,12 +11,14 @@
     "d-devShell": "docker run -it -p 8080:8080 -v $(pwd):/app express-app bash",
     "d-prodShell": "docker run -it -p 8080:8080 express-app bash",
     "d-dev": "docker run -it -p 8080:8080 -v $(pwd):/app express-app bash & nodemon start",
-    "d-start": "docker run -p 8080:8080 express-app"
+    "d-start": "docker run -p 8080:8080 express-app",
+    "test": "jest"
   },
   "author": "Tom Lesh",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "jest": "^24.8.0",
     "mongodb": "^3.2.6",
     "mongoose": "^5.5.11",
     "nodemon": "^1.19.1"
