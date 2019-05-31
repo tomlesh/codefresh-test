@@ -1,0 +1,24 @@
+{
+  "name": "dockerised-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start-prod": "MODE=production node src/index.js",
+    "start-dev": "MODE=development nodemon src/index.js",
+    "d-build": "docker build -t express-app .",
+    "d-rebuild": "docker image rm -f",
+    "d-devShell": "docker run -it -p 8080:8080 -v $(pwd):/app express-app bash",
+    "d-prodShell": "docker run -it -p 8080:8080 express-app bash",
+    "d-dev": "docker run -it -p 8080:8080 -v $(pwd):/app express-app bash & nodemon start",
+    "d-start": "docker run -p 8080:8080 express-app"
+  },
+  "author": "Tom Lesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.2.6",
+    "mongoose": "^5.5.11",
+    "nodemon": "^1.19.1"
+  }
+}
