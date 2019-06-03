@@ -8,7 +8,7 @@ describe('fake tests', function() {
     expect(true).toBe(true);  
   });
   it('3', function() {
-    expect(false).toBe(false);  
+    expect(false).toBe(true);  
   });
 })
 

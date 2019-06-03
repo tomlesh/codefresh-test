@@ -12,7 +12,8 @@
     "d-prodShell": "docker run -it -p 8080:8080 express-app bash",
     "d-dev": "docker run -it -p 8080:8080 -v $(pwd):/app express-app bash & nodemon start",
     "d-start": "docker run -p 8080:8080 express-app",
-    "test": "jest"
+    "test": "jest",
+    "test-with-coverage": "jest --coverage --coverageReporters=text-lcov | COVERALLS_REPO_TOKEN=pOw0iIWbfY3HFXMbEHG6XEZpb5H9zHpCM coveralls"
   },
   "author": "Tom Lesh",
   "license": "ISC",
