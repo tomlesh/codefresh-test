@@ -3,8 +3,11 @@ const mongoose = require('mongoose');
 const assert = require('assert');
 
 const mongooseConnection = require('./db/mongo'); 
+const { powOfTwo } = require('./utils');
 
 const app = express();
+
+console.log(powOfTwo(12));
 
 /**
  * MONGO STUFF

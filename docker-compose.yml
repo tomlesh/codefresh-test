@@ -10,7 +10,7 @@ services:
             - .:/app
         ports:
             - 8080:8080
-        command: yarn start-prod
+        command: yarn start-dev
         links:
             - mongo
     mongo:
