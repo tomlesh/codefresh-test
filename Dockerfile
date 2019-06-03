@@ -7,9 +7,9 @@ WORKDIR /app
 COPY package.json /app
 COPY yarn.lock /app
 
-RUN npm install -g nodemon
+RUN npm install -g nodemon jest coveralls
 
-RUN npm install 
+RUN npm install
 
 COPY src /app/src
 
