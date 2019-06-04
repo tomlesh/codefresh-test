@@ -3,9 +3,9 @@ SF:/home/denis/projects/docker-practice/dockerised-express/src/utils/index.js
 FN:1,powOfTwo
 FNF:1
 FNH:1
-FNDA:4,powOfTwo
-DA:2,4
-DA:5,2
+FNDA:3,powOfTwo
+DA:2,3
+DA:5,1
 LF:2
 LH:2
 BRF:0
